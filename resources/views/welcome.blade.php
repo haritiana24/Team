@@ -69,7 +69,7 @@
                 @foreach($users as   $item)
                     @foreach($item->headers as $data)
                         <li class="nav-item">
-                            <a class="nav-link page-scroll" href="#{{$data->items}}"> {{$data->items}}<span class="sr-only">(current)</span></a>
+                            <a class="nav-link page-scroll" href="#{{ucfirst(strtolower($data->items))}}"> {{$data->items}}<span class="sr-only">(current)</span></a>
                         </li>
                     @endforeach
                 @endforeach
@@ -691,7 +691,7 @@
 
 
     <!-- About -->
-    <div id="about" class="basic-4">
+    <div id="About" class="basic-4">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -807,7 +807,7 @@
 
 
     <!-- Contact -->
-    <div id="contact" class="form-2">
+    <div id="Contact" class="form-2">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

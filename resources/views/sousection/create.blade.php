@@ -8,7 +8,7 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-body">
-                     <h1 class="text-center"> Céer  le section {{$titlesection->name}}</h1>
+                     <h1 class="text-center"> Céer  la sous  section {{$titlesection->name}}</h1>
                     <form action="{{route('sousection.store', $titlesection->id)}}" method="post" enctype="multipart/form-data">
                          @csrf
                          <div class="form-group">

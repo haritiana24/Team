@@ -8,13 +8,14 @@
     </script>
 @endsection
 @section('content')
-    <div class="container">
+    @if (isset($titleSection))
+        <div class="container">
         <div class="row">
             <div class="col-md-2">
                  @include("includes.sedbar")
             </div>
                 <div class="col-md-10">
-                    <h1 class="card-title"> Liste de  contenue de  {{$titleSection->name}}</h1>
+                    <h1 class="card-title"> Liste de  contenue de  {{ isset($titleSection) ? $titleSection->name : ""}}</h1>
                 <table class="table table-bordered table-striped table-condensed">
                     <thead>
                         <tr>
@@ -119,5 +120,8 @@
             </div>
         </div>
     </div>
+    @else
+    <h1 class="alert alert-danger">The data is empty</h1>
+    @endif
 
 @endsection

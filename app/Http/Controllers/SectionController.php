@@ -74,17 +74,28 @@ class SectionController extends Controller
     public function show($id)
     {
         $sections = Section::sections($id)->get();
-        foreach($sections as $section){
-            if($section->titlesection_id === 1){
-                $sections = $sections[0];
-                $titleSection = TitleSEction::find($id);
-                return view('section.show',  compact('sections', 'titleSection'));
-            }else{
-                $sections = Section::sections($id)->where("status", 1)->get();
-                $titleSection = TitleSEction::find($id);
-                return view('section.show',  compact('sections', 'titleSection'));
+        if(!$this->empty_object($sections)){
+
+            foreach($sections as $section){
+                if($section->titlesection_id === 1){
+                    $sections = $sections[0];
+                    $titleSection = TitleSEction::find($id);
+                    return view('section.show',  compact('sections', 'titleSection'));
+                }else{
+                    $sections = Section::sections($id)->where("status", 1)->get();
+                    $titleSection = TitleSEction::find($id);
+                    return view('section.show',  compact('sections', 'titleSection'));
+                }
             }
+        }else{
+           return view("section.show");
         }
+      
+    }
+
+    private function empty_object($obj){
+        foreach( $obj as $x ) return false;
+        return true;
     }
 
     /**

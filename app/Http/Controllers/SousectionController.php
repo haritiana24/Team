@@ -27,8 +27,8 @@ class SousectionController extends Controller
      */
     public function create($id)
     {
-        $section = Section::find($id);
-        return  view('sousection.create', compact('section'));
+        $titlesection = TitleSection::find($id);
+        return  view('sousection.create',compact("titlesection"));
     }
 
     /**
@@ -55,7 +55,7 @@ class SousectionController extends Controller
             return false;
         }
 
-        return redirect(route('section'));
+        return redirect(route('section.index'));
     }
 
     /**
