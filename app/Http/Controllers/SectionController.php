@@ -143,6 +143,13 @@ class SectionController extends Controller
         }
     }
 
+    
+    
+    /**
+     * validator of request 
+     *
+     * @return void
+     */
     private  function validator()
     {
           return    \request()->validate([

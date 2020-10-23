@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\TitleSection;
 use App\Sousection;
+use App\Section;
 class SousectionController extends Controller
 {
     /**
@@ -14,8 +15,8 @@ class SousectionController extends Controller
      */
     public function index($id)
     {
-        $titlesection = TitleSection::find($id);
-        return view('sousection.index', compact('titlesection'));
+        $section = Section::find($id);
+        return view('sousection.index', compact('section'));
     }
 
 
@@ -26,8 +27,8 @@ class SousectionController extends Controller
      */
     public function create($id)
     {
-        $titlesection = TitleSection::find($id);
-        return  view('sousection.create', compact('titlesection'));
+        $section = Section::find($id);
+        return  view('sousection.create', compact('section'));
     }
 
     /**

@@ -81,7 +81,7 @@
         <!-- Header -->
     <header id="header" class="header">
         <div class="header-content">
-            <div class="container">
+            <div class="container"  id="Home">
                 <div class="row">
                     @foreach ($users as $user)
                         @foreach ($titles as $title)
@@ -151,7 +151,7 @@
 
 
     <!-- Services -->
-    <div id="services" class="cards-1">
+    <div id="Services" class="cards-1">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -352,7 +352,7 @@
 
 
     <!-- Pricing -->
-    <div id="pricing" class="cards-2">
+    <div id="Price" class="cards-2">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

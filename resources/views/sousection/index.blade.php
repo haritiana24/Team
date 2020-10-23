@@ -9,8 +9,8 @@
             <div class="card">
                 <div class="card-body">
 
-                    @if($titlesection)
-                        <a href="{{route('sousection.create', $titlesection->id)}}" class="btn btn-primary">Crée une sous section</a>
+                    @if($section)
+                        <a href="{{route('sousection.create', $section->id)}}" class="btn btn-primary">Crée une sous section</a>
                         <a href="{{route('section.index')}}" class="btn">Annuler</a>
                         @else
                         <h1 class="text-center"> Sous section </h1>
