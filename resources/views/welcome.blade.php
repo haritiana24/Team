@@ -154,11 +154,12 @@
     <div id="Services" class="cards-1">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <h2>Business Growth Services</h2>
-                    <p class="p-heading p-large">We serve small and medium sized companies in all tech related
-                        industries with high quality growth services which are presented below</p>
-                </div> <!-- end of col -->
+                @if (isset($sousectionService))
+                    <div class="col-lg-12">
+                        <h2>{{$sousectionService[0]->title}}</h2>
+                        <p class="p-heading p-large">{{$sousectionService[0]->content}}</p>
+                    </div> <!-- end of col --> 
+                @endif
             </div> <!-- end of row -->
             <div class="row">
                 <div class="col-lg-12">
@@ -195,15 +196,14 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="text-container">
-                        <h2>Design And Plan Your Business Growth Steps</h2>
-                        <p>Use our staff and our expertise to design and plan your business growth strategy. Evolo team
-                            is eager to advise you on the best opportunities that you should look into</p>
+                    <h2>{{$sousectionService[1]->title}}</h2>
+                    <p>{{$sousectionService[1]->content}}</p>
                         <a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox-1">LIGHTBOX</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
                     <div class="image-container">
-                        <img class="img-fluid" src="images/details-1-office-worker.svg" alt="alternative">
+                    <img class="img-fluid" src="{{asset('storage') . '/' . $sousectionService[1]->image}}" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -218,25 +218,14 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="image-container">
-                        <img class="img-fluid" src="images/details-2-office-team-work.svg" alt="alternative">
+                    <img class="img-fluid" src="{{asset('storage') . '/' . $sousectionService[2]->image }}" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
                     <div class="text-container">
-                        <h2>Search For Optimization Wherever Is Possible</h2>
+                    <h2>{{$sousectionService[2]->title}}</h2>
                         <ul class="list-unstyled li-space-lg">
-                            <li class="media">
-                                <i class="fas fa-check"></i>
-                                <div class="media-body">Basically we'll teach you step by step what you need to do</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-check"></i>
-                                <div class="media-body">In order to develop your company and reach new heights</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-check"></i>
-                                <div class="media-body">Everyone will be pleased from stakeholders to employees</div>
-                            </li>
+                        <p>{{$sousectionService[2]->content}}</p>
                         </ul>
                         <a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox-2">LIGHTBOX</a>
                     </div> <!-- end of text-container -->

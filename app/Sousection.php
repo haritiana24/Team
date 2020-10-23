@@ -18,4 +18,8 @@ class Sousection extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+   public function scopeSousectionAcrticle($query){
+        return $query->where("titlesection_id", 2)->get();
+    }
 }

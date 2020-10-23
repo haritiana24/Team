@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Titlesection;
 use App\User;
 use App\Footer;
+use App\Sousection;
+use App\Section;
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
@@ -14,6 +16,14 @@ class WelcomeController extends Controller
         $users = User::get();
         $titles = Titlesection::get(); 
         $footers = Footer::all();
-        return view('welcome', compact('users', 'titles', 'footers'));
+        $sousectionService = Sousection::sousectionAcrticle();
+        $secions = Section::all();
+        return view('welcome',[
+            "users" => $users,
+            "titles" => $titles,
+            "footers" => $footers,
+            "sections" => $secions, 
+            "sousectionService" => $sousectionService
+        ]);
     }
 }
