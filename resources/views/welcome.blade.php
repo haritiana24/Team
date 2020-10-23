@@ -154,7 +154,7 @@
     <div id="Services" class="cards-1">
         <div class="container">
             <div class="row">
-                @if (isset($sousectionService))
+                @if (!empty($sousectionService))
                     <div class="col-lg-12">
                         <h2>{{$sousectionService[0]->title}}</h2>
                         <p class="p-heading p-large">{{$sousectionService[0]->content}}</p>
@@ -195,15 +195,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="text-container">
-                    <h2>{{$sousectionService[1]->title}}</h2>
-                    <p>{{$sousectionService[1]->content}}</p>
-                        <a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox-1">LIGHTBOX</a>
-                    </div> <!-- end of text-container -->
+
+                    @if (!empty($sousectionService))
+                         <div class="text-container">
+                            <h2>{{$sousectionService[1]->title}}</h2>
+                            <p>{{$sousectionService[1]->content}}</p>
+                            <a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox-1">LIGHTBOX</a>
+                         </div> <!-- end of text-container -->
+                    @endif
+                   
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
                     <div class="image-container">
-                    <img class="img-fluid" src="{{asset('storage') . '/' . $sousectionService[1]->image}}" alt="alternative">
+                        @if (!empty($sousectionService))
+                            <img class="img-fluid" src="{{asset('storage') . '/' . $sousectionService[1]->image}}" alt="alternative">
+                        @endif
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -218,15 +224,19 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="image-container">
-                    <img class="img-fluid" src="{{asset('storage') . '/' . $sousectionService[2]->image }}" alt="alternative">
+                        @if (!empty($sousectionService))
+                            <img class="img-fluid" src="{{asset('storage') . '/' . $sousectionService[2]->image }}" alt="alternative">
+                        @endif
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
                     <div class="text-container">
-                    <h2>{{$sousectionService[2]->title}}</h2>
+                        @if (!empty($sousectionService))
+                        <h2>{{$sousectionService[2]->title}}</h2>
                         <ul class="list-unstyled li-space-lg">
                         <p>{{$sousectionService[2]->content}}</p>
                         </ul>
+                        @endif
                         <a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox-2">LIGHTBOX</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
