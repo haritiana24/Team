@@ -824,9 +824,10 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="map-responsive">
-                        <iframe
+                        {{-- <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100939.98555098464!2d-122.507640204439!3d37.757814996609724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan+Francisco%2C+CA%2C+USA!5e0!3m2!1sen!2sro!4v1498231462606"
-                            allowfullscreen></iframe>
+                            allowfullscreen></iframe> --}}
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d943.2395931803417!2d47.52098782917753!3d-18.977445730985114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDU4JzM4LjgiUyA0N8KwMzEnMTcuNSJF!5e0!3m2!1sen!2smg!4v1603455151113!5m2!1sen!2smg" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                 </div> <!-- end of col -->
                 <div class="col-lg-6">

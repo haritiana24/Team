@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
 {
+    //  Cette function permet d'afficher les  vue  dans  le page  d'accueil haritiana  randria 
     public function index( User $user, Titlesection $titles, Footer $footers)
     {
         $users = User::get();
