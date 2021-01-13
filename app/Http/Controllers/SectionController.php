@@ -45,17 +45,10 @@ class SectionController extends Controller
     public function store(Request $request, $header)
     {
          $header = Header::find($header);
-         $test =   \request()->validate([
-            "titre" => 'required',
-            'contenue' => 'required',
-            'description' => 'required',
-            'status'=> 'required|integer',
-            'image' => 'sometimes|image|max:5000',
-        ]);
         $data = Section::get();
         if (empty($data->image)){
             $header = auth()->user()->sections()->create(
-                array_merge($test, ['titlesection_id' => $header->titleSection->id])
+                array_merge($this->validator(), ['titlesection_id' => $header->titleSection->id])
             );
             $this->storeImage($header);
         }else{
@@ -161,14 +154,14 @@ class SectionController extends Controller
      *
      * @return void
      */
-    private  function validator()
+    private function validator()
     {
-          return    \request()->validate([
-            "titre" => 'required',
+        return \request()->validate([
+            'titre' => 'required',
             'contenue' => 'required',
             'description' => 'required',
-            'status' => 'requried|integer',
-            'image' => 'sometimes|image|max:5000',
+            'status' => 'required|integer',
+            'image' => 'sotemtimes|image|max:5000'
         ]);
     }
 
