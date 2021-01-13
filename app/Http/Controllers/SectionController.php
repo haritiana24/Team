@@ -171,4 +171,5 @@ class SectionController extends Controller
             'image' => 'sometimes|image|max:5000',
         ]);
     }
+
 }
