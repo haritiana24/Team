@@ -4,18 +4,10 @@ Route::get('/', 'WelcomeController@index')->name('welcome.index');
 
 // Auth
 Auth::routes();
-// Route::get('/profiles/{user}', 'ProfileController@show')->name('profiles.show');
-// Route::get('/profiles/{user}/edit', 'ProfileController@edit')->name('profiles.edit');
-// Route::patch('/profiles/{user}', 'ProfileController@update')->name('profiles.update');
 
 // Home page
 Route::resource('home', "AdminController");
 // Post cotroller
-
-//Route::get('/posts', 'PostController@index')->name('posts.index');
-// Route::get('/posts/create', 'PostController@create')->name('posts.create');
-// Route::post('/posts', 'PostController@store')->name('posts.store');
-// Route::get('/posts/{post}', 'PostController@show')->name('posts.show');
 
 // Header Controller
 Route::resource('header', 'HeaderController');
